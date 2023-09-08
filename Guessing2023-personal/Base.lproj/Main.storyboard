@@ -1,24 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Guessing View Controller-->
+        <scene sceneID="eSA-Rj-tUu">
+            <objects>
+                <viewController id="F3U-d9-O6e" customClass="GuessingViewController" customModule="Guessing2023_personal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zXS-f2-OYY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Enter number between 1 and 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qd-Wr-nvo">
+                                <rect key="frame" x="16" y="273.66666666666669" width="361" height="25.333333333333314"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNu-b3-1aF">
+                                <rect key="frame" x="16" y="150.66666666666666" width="361" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yG0-zO-ubc">
+                                <rect key="frame" x="16" y="434" width="361" height="62"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Guess"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Guess">
+                                            <attributes>
+                                                <font key="NSFont" size="41" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" systemColor="opaqueSeparatorColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="guessNumber:" destination="F3U-d9-O6e" eventType="touchUpInside" id="ist-Rd-lQI"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Yl6-J6-j8J">
+                                <rect key="frame" x="257" y="0.0" width="109" height="32"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <segments>
+                                    <segment title="green" width="55"/>
+                                    <segment title="blue"/>
+                                </segments>
+                                <connections>
+                                    <action selector="themeChanged:" destination="F3U-d9-O6e" eventType="valueChanged" id="PzW-UO-vAk"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZXY-tX-sRV"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="1qd-Wr-nvo" firstAttribute="top" secondItem="uNu-b3-1aF" secondAttribute="bottom" constant="94" id="0GV-K1-qIs"/>
+                            <constraint firstItem="ZXY-tX-sRV" firstAttribute="bottom" secondItem="1qd-Wr-nvo" secondAttribute="bottom" constant="484" id="709-9U-Yl4"/>
+                            <constraint firstItem="yG0-zO-ubc" firstAttribute="top" secondItem="1qd-Wr-nvo" secondAttribute="bottom" constant="135" id="B0j-1P-C4g"/>
+                            <constraint firstItem="ZXY-tX-sRV" firstAttribute="trailing" secondItem="1qd-Wr-nvo" secondAttribute="trailing" constant="16" id="Wzr-Ud-b0k"/>
+                            <constraint firstItem="1qd-Wr-nvo" firstAttribute="leading" secondItem="ZXY-tX-sRV" secondAttribute="leading" constant="16" id="Yji-zx-eae"/>
+                            <constraint firstItem="yG0-zO-ubc" firstAttribute="leading" secondItem="ZXY-tX-sRV" secondAttribute="leading" constant="16" id="eO7-E6-sX6"/>
+                            <constraint firstItem="ZXY-tX-sRV" firstAttribute="trailing" secondItem="uNu-b3-1aF" secondAttribute="trailing" constant="16" id="fgc-xT-gHf"/>
+                            <constraint firstItem="uNu-b3-1aF" firstAttribute="leading" secondItem="ZXY-tX-sRV" secondAttribute="leading" constant="16" id="kff-vj-fk3"/>
+                            <constraint firstItem="uNu-b3-1aF" firstAttribute="top" secondItem="ZXY-tX-sRV" secondAttribute="top" constant="91.670000000000002" id="ohv-K9-qO4"/>
+                            <constraint firstItem="ZXY-tX-sRV" firstAttribute="trailing" secondItem="yG0-zO-ubc" secondAttribute="trailing" constant="16" id="uHz-n6-ti1"/>
+                            <constraint firstItem="ZXY-tX-sRV" firstAttribute="bottom" secondItem="yG0-zO-ubc" secondAttribute="bottom" constant="287" id="x3r-0W-UrB"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="VQ4-rj-hKS" appends="YES" id="tuy-IY-zlY"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="gLf-Wy-qMH"/>
+                    <connections>
+                        <outlet property="guessInput" destination="uNu-b3-1aF" id="5Ea-ZC-2Ze"/>
+                        <outlet property="mainView" destination="zXS-f2-OYY" id="kwR-Jc-gH3"/>
+                        <outlet property="outputLabel" destination="1qd-Wr-nvo" id="Qcm-V7-2qE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xlV-7n-JDR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="VQ4-rj-hKS">
+                    <connections>
+                        <action selector="tapDidHappened:" destination="F3U-d9-O6e" id="0EU-ND-8QO"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-225.19083969465649" y="-21.126760563380284"/>
+        </scene>
+        <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Guessing2023_personal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Welcome to my Guessing Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCL-KI-bxd">
+                                <rect key="frame" x="53" y="84" width="286" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCB-eD-Ua0">
+                                <rect key="frame" x="119" y="622" width="155" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Play guess Game">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.60688334700000002" green="0.11012608560000001" blue="0.1197500303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="F3U-d9-O6e" kind="show" id="HZy-kx-MXK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rCL-KI-bxd" secondAttribute="trailing" constant="54" id="IJ4-fb-fZ4"/>
+                            <constraint firstItem="rCL-KI-bxd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="OGO-Yq-8WD"/>
+                            <constraint firstItem="rCL-KI-bxd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="WNb-QW-UxV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vCB-eD-Ua0" secondAttribute="bottom" constant="161" id="dNs-Xx-Ovr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vCB-eD-Ua0" secondAttribute="trailing" constant="119" id="geq-sL-DVz"/>
+                            <constraint firstItem="vCB-eD-Ua0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="119" id="l1X-dv-QXy"/>
+                            <constraint firstItem="vCB-eD-Ua0" firstAttribute="top" secondItem="rCL-KI-bxd" secondAttribute="bottom" constant="517" id="rgC-So-pWM"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="bSb-3U-Qgf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1083.206106870229" y="-21.126760563380284"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="quaternaryLabelColor"/>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="quaternaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17647058823529413" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
